@@ -1,6 +1,6 @@
 # balena-bookstack
 
-bookstack stack for balenaCloud
+[bookstack](https://www.bookstackapp.com) stack for balenaCloud
 
 ## Requirements
 
