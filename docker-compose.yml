@@ -8,7 +8,7 @@ volumes:
 services:
   # https://hub.docker.com/r/linuxserver/bookstack/
   bookstack:
-    image: linuxserver/bookstack:v0.29.3-ls97
+    build: bookstack
     environment:
       DB_HOST: mariadb
       DB_DATABASE: bookstack

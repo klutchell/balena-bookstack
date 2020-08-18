@@ -24,7 +24,7 @@ Application envionment variables apply to all services within the application, a
 |---|---|---|
 |`TZ`|`America/Toronto`|(optional) inform services of the [timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) in your location|
 |`MYSQL_ROOT_PASSWORD`|`********`|password that will be set for the MariaDB root account|
-|`APP_URL`|`http://bookstack.192.168.8.4.nip.io`|for specifying the url your application will be accessed on (required for correct operation of reverse proxy)|
+|`APP_URL`|`https://<UUID>.balena-devices.com`|for specifying the url your application will be accessed on (required for correct operation of reverse proxy)|
 
 ## Usage
 
@@ -51,6 +51,7 @@ Kyle Harding <https://klutchell.dev>
 ## References
 
 - <https://docs.linuxserver.io/images/docker-bookstack>
+- <https://www.bookstackapp.com/docs/>
 - <https://www.bookstackapp.com/docs/admin/backup-restore/#database>
 
 ## License
