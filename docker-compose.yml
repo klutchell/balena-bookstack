@@ -1,0 +1,57 @@
+version: "2.1"
+
+volumes:
+  bookstack:
+  mariadb:
+  duplicati:
+
+services:
+  # https://hub.docker.com/r/linuxserver/bookstack/
+  bookstack:
+    image: linuxserver/bookstack:v0.29.3-ls97
+    environment:
+      DB_HOST: mariadb
+      DB_DATABASE: bookstack
+      DB_USER: bookstack
+      DB_PASS: bookstack
+    ports:
+      - 80:80/tcp
+    volumes:
+      - bookstack:/config
+    depends_on:
+      - mariadb
+
+  # https://hub.docker.com/_/mariadb/
+  mariadb:
+    build: mariadb
+    volumes:
+      - mariadb:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: bookstack
+      MYSQL_USER: bookstack
+      MYSQL_PASSWORD: bookstack
+
+  # https://hub.docker.com/_/mariadb/
+  mysqldump:
+    build: mariadb
+    command: "/mysqldump.sh"
+    environment:
+      MYSQL_DATABASE: bookstack
+    volumes:
+      - mariadb:/var/lib/mysql
+    depends_on:
+      - mariadb
+
+  # https://hub.docker.com/r/linuxserver/duplicati
+  duplicati:
+    image: linuxserver/duplicati:arm64v8-latest
+    environment:
+      PUID: "0"
+      PGID: "0"
+      CLI_ARGS: --webservice-interface=any
+    ports:
+      - 8200:8200/tcp
+    volumes:
+      - duplicati:/config
+      - bookstack:/source/bookstack
+      - mariadb:/source/mariadb
