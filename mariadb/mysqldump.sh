@@ -9,5 +9,5 @@ do
         -h mariadb \
         -u root \
         -p"${MYSQL_ROOT_PASSWORD}" \
-        "${MYSQL_DATABASE}" > "/var/lib/mysql/${MYSQL_DATABASE}-mysqldump.sql"
+        "${MYSQL_DATABASE}" > "/var/lib/mysql/${MYSQL_DATABASE}.sqldump"
 done

@@ -1,0 +1,19 @@
+#!/usr/bin/with-contenv bash
+
+if [ -n "${CACHE_DRIVER}" ]
+then
+	sed '/CACHE_DRIVER=/d' -i /config/www/.env
+	echo "CACHE_DRIVER=${CACHE_DRIVER}" >> /config/www/.env
+fi
+
+if [ -n "${SESSION_DRIVER}" ]
+then
+	sed '/SESSION_DRIVER=/d' -i /config/www/.env
+	echo "SESSION_DRIVER=${SESSION_DRIVER}" >> /config/www/.env
+fi
+
+if [ -n "${REDIS_SERVERS}" ]
+then
+	sed '/REDIS_SERVERS=/d' -i /config/www/.env
+	echo "REDIS_SERVERS=${REDIS_SERVERS}" >> /config/www/.env
+fi

@@ -14,12 +14,20 @@ services:
       DB_DATABASE: bookstack
       DB_USER: bookstack
       DB_PASS: bookstack
+      CACHE_DRIVER: redis
+      SESSION_DRIVER: redis
+      REDIS_SERVERS: redis:6379:0
     ports:
       - 80:80/tcp
     volumes:
       - bookstack:/config
     depends_on:
       - mariadb
+      - redis
+
+  # https://hub.docker.com/_/redis
+  redis:
+    image: redis:alpine
 
   # https://hub.docker.com/_/mariadb/
   mariadb:

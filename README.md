@@ -51,8 +51,8 @@ Kyle Harding <https://klutchell.dev>
 ## References
 
 - <https://docs.linuxserver.io/images/docker-bookstack>
-- <https://www.bookstackapp.com/docs/>
 - <https://www.bookstackapp.com/docs/admin/backup-restore/#database>
+- <https://www.bookstackapp.com/docs/admin/cache-session-config/>
 
 ## License
 
