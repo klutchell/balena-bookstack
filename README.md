@@ -30,7 +30,7 @@ Application envionment variables apply to all services within the application, a
 
 ### bookstack
 
-Connect to `http://<device-ip>:80` to begin using duplicati.
+Connect to `http://<device-ip>:80` to begin using bookstack.
 
 ### duplicati
 
