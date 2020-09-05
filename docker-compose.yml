@@ -42,7 +42,7 @@ services:
   # https://hub.docker.com/_/mariadb/
   mysqldump:
     build: mariadb
-    command: "/mysqldump.sh"
+    command: "/sqldump.sh"
     environment:
       MYSQL_DATABASE: bookstack
     volumes:
