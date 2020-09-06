@@ -2,6 +2,7 @@ version: "2.1"
 
 volumes:
   bookstack:
+  exported:
   mariadb:
   duplicati:
 
@@ -24,6 +25,14 @@ services:
     depends_on:
       - mariadb
       - redis
+  
+  # https://gist.github.com/ssddanbrown/45acb913a7b873240b2d89781e74a7a4
+  export-books:
+    build: export-books
+    volumes:
+      - exported:/exported
+    depends_on:
+      - bookstack
 
   # https://hub.docker.com/_/redis
   redis:
@@ -63,3 +72,4 @@ services:
       - duplicati:/config
       - bookstack:/source/bookstack
       - mariadb:/source/mariadb
+      - exported:/source/exported

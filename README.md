@@ -25,6 +25,9 @@ Application envionment variables apply to all services within the application, a
 |`TZ`|`America/Toronto`|(optional) inform services of the [timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) in your location|
 |`MYSQL_ROOT_PASSWORD`|`********`|password that will be set for the MariaDB root account|
 |`APP_URL`|`https://<UUID>.balena-devices.com`|for specifying the url your application will be accessed on (required for correct operation of reverse proxy)|
+|`BS_URL`|`https://<UUID>.balena-devices.com`| (optional) set to the same value as APP_URL in order to enable schedule book exports|
+|`BS_TOKEN_ID`|`abc123`|(optional) set to be your API token_id in order to enable schedule book exports|
+|`BS_TOKEN_SECRET`|`123abc`|(optional) set to be your API token_secret in order to enable schedule book exports|
 
 ## Usage
 
