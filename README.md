@@ -4,7 +4,7 @@
 
 ## Requirements
 
-- Raspberry Pi 4 or a similar x64 device supported by BalenaCloud
+- Raspberry Pi 4 or a similar device supported by BalenaCloud
 
 ## Getting Started
 
@@ -33,19 +33,23 @@ Application envionment variables apply to all services within the application, a
 
 ### bookstack
 
-Connect to `http://<device-ip>:80` to begin using bookstack.
+Connect to `http://<device-ip>:80` or enable the `Public device URL` in the dashboard to begin using Bookstack.
+
+The default username is `admin@admin.com` with the password of `password`.
+
+Ensure you change the password and email address for the default username.
+
+- <https://www.bookstackapp.com/docs/>
+- <https://docs.linuxserver.io/images/docker-bookstack#application-setup>
+
 
 ### duplicati
 
 Connect to `http://<device-ip>:8200` to begin using duplicati.
 
+- <https://duplicati.readthedocs.io/en/latest/>
+- <https://docs.linuxserver.io/images/docker-duplicati#application-setup>
+
 ## Contributing
 
 Please open an issue or submit a pull request with any features, fixes, or changes.
-
-## References
-
-- <https://docs.linuxserver.io/images/docker-bookstack>
-- <https://www.bookstackapp.com/docs/admin/backup-restore/#database>
-- <https://www.bookstackapp.com/docs/admin/cache-session-config/>
-
