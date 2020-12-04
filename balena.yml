@@ -1,3 +1,2 @@
 applicationEnvironmentVariables:
-    - TZ: 'America/Toronto'
     - MYSQL_ROOT_PASSWORD: 'mysecretpassword'
