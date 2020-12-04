@@ -1,2 +1,17 @@
-applicationEnvironmentVariables:
+version: "2"
+slug: "bookstackapp"
+name: "Bookstack"
+type: "sw.application"
+assets:
+  - url: "https://github.com/klutchell/balena-bookstack"
+    name: "repository"
+  - url: "https://raw.githubusercontent.com/klutchell/balena-bookstack/main/logo.png"
+    name: "logo"
+data:
+  description: "Bookstack app for balenaCloud and balenaHub!"
+  applicationEnvironmentVariables:
     - MYSQL_ROOT_PASSWORD: 'mysecretpassword'
+  defaultDeviceType: "raspberrypi3-64"
+  supportedDeviceTypes:
+    - "raspberrypi3-64"
+    - "raspberrypi4-64"
