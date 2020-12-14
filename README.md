@@ -1,6 +1,6 @@
 # balena-bookstack
 
-[bookstack](https://www.bookstackapp.com) stack for balenaCloud
+[BookStack](https://www.bookstackapp.com) is a simple and free, self-hosted, easy-to-use wiki platform for organising and storing information.
 
 ## Getting Started
 
@@ -26,7 +26,7 @@ Application envionment variables apply to all services within the application, a
 
 ### bookstack
 
-Connect to `http://<device-ip>:80` or enable the `Public device URL` in the dashboard to begin using Bookstack.
+Connect to `http://<device-ip>:80` or enable the `Public device URL` in the dashboard to begin using BookStack.
 
 The default username is `admin@admin.com` with the password of `password`.
 
@@ -36,7 +36,7 @@ Ensure you change the password and email address for the default username.
 
 ### redis
 
-Redis an in-memory key-value database that can be used to improve the performance of applications via memory caching, where frequently-requested objects are stored in memory for faster retrieval. I'm not a expert beyond setting it up, but some form of memory caching is recommended for a small performance bump in applications like Bookstack and Nextcloud. It is completely optional though, so feel free to remove it from your setup.
+Redis an in-memory key-value database that can be used to improve the performance of applications via memory caching, where frequently-requested objects are stored in memory for faster retrieval. I'm not a expert beyond setting it up, but some form of memory caching is recommended for a small performance bump in applications like BookStack and Nextcloud. It is completely optional though, so feel free to remove it from your setup.
 
 <https://www.bookstackapp.com/docs/admin/cache-session-config/>
 
