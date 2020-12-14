@@ -36,8 +36,7 @@ The default username is `admin@admin.com` with the password of `password`.
 
 Ensure you change the password and email address for the default username.
 
-- <https://www.bookstackapp.com/docs/>
-- <https://docs.linuxserver.io/images/docker-bookstack#application-setup>
+<https://www.bookstackapp.com/docs/>
 
 ### redis
 
@@ -47,18 +46,21 @@ Redis an in-memory key-value database that can be used to improve the performanc
 
 ### duplicati
 
-Connect to `http://<device-ip>:8200` to begin using duplicati.
+I use Duplicati on most of my devices as a way to ensure I have offsite backups of the data in case of SD card corruption or other data loss. It also makes it convenient to migrate the data to a new device and memory card if needed.
 
-- <https://duplicati.readthedocs.io/en/latest/>
-- <https://docs.linuxserver.io/images/docker-duplicati#application-setup>
+Connect to `http://<device-ip>:8200` to begin using Duplicati.
+
+<https://duplicati.readthedocs.io/en/latest/>
 
 ### mysqldump
 
 The `mysqldump` service will run every hour and take a snapshot of the mysql database.
-When duplicati backs up an `.sqldump` file it is more likely to be recovered from a backup
+When Duplicati backs up an `.sqldump` file it is more likely to be recovered from a backup
 than an in-use database file.
 
-- <https://mariadb.com/kb/en/mysqldump/#restoring>
+I don't trust a backup of a database that is currently in use, so sqldump ensures there is no corruption due to open database files. On restoration if the database doesn't immediately work, I can import the sqldump file.
+
+<https://mariadb.com/kb/en/mysqldump/#restoring>
 
 ## Contributing
 
