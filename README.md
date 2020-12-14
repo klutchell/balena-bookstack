@@ -2,10 +2,6 @@
 
 [bookstack](https://www.bookstackapp.com) stack for balenaCloud
 
-## Requirements
-
-- Raspberry Pi 4 or a similar device supported by BalenaCloud
-
 ## Getting Started
 
 You can one-click-deploy this project to balena using the button below:
