@@ -39,6 +39,12 @@ Ensure you change the password and email address for the default username.
 - <https://www.bookstackapp.com/docs/>
 - <https://docs.linuxserver.io/images/docker-bookstack#application-setup>
 
+### redis
+
+Redis an in-memory key-value database that can be used to improve the performance of applications via memory caching, where frequently-requested objects are stored in memory for faster retrieval. I'm not a expert beyond setting it up, but some form of memory caching is recommended for a small performance bump in applications like Bookstack and Nextcloud. It is completely optional though, so feel free to remove it from your setup.
+
+<https://www.bookstackapp.com/docs/admin/cache-session-config/>
+
 ### duplicati
 
 Connect to `http://<device-ip>:8200` to begin using duplicati.
