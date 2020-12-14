@@ -3,7 +3,6 @@ version: "2.1"
 volumes:
   bookstack:
   mariadb:
-  duplicati:
 
 services:
   # https://hub.docker.com/r/linuxserver/bookstack/
@@ -49,17 +48,3 @@ services:
       - mariadb:/var/lib/mysql
     depends_on:
       - mariadb
-
-  # https://hub.docker.com/r/linuxserver/duplicati
-  duplicati:
-    image: linuxserver/duplicati:v2.0.5.1-2.0.5.1_beta_2020-01-18-ls83
-    environment:
-      PUID: "0"
-      PGID: "0"
-      CLI_ARGS: --webservice-interface=any
-    ports:
-      - 8200:8200/tcp
-    volumes:
-      - duplicati:/config
-      - bookstack:/source/bookstack
-      - mariadb:/source/mariadb

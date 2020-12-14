@@ -6,7 +6,7 @@
 
 You can one-click-deploy this project to balena using the button below:
 
-[![](https://balena.io/deploy.svg)](https://dashboard.balena-cloud.com/deploy?repoUrl=https://github.com/klutchell/balena-bookstack&defaultDeviceType=raspberrypi4-64)
+[![](https://balena.io/deploy.svg)](https://dashboard.balena-cloud.com/deploy?repoUrl=https://github.com/klutchell/balena-bookstack&defaultDeviceType=raspberrypi3)
 
 ## Manual Deployment
 
@@ -40,23 +40,21 @@ Redis an in-memory key-value database that can be used to improve the performanc
 
 <https://www.bookstackapp.com/docs/admin/cache-session-config/>
 
-### duplicati
-
-I use Duplicati on most of my devices as a way to ensure I have offsite backups of the data in case of SD card corruption or other data loss. It also makes it convenient to migrate the data to a new device and memory card if needed.
-
-Connect to `http://<device-ip>:8200` to begin using Duplicati.
-
-<https://duplicati.readthedocs.io/en/latest/>
-
 ### mysqldump
 
 The `mysqldump` service will run every hour and take a snapshot of the mysql database.
-When Duplicati backs up an `.sqldump` file it is more likely to be recovered from a backup
-than an in-use database file.
-
-I don't trust a backup of a database that is currently in use, so sqldump ensures there is no corruption due to open database files. On restoration if the database doesn't immediately work, I can import the sqldump file.
+This will provide an alternate database recovery method in case of data corruption from power loss, etc.
 
 <https://mariadb.com/kb/en/mysqldump/#restoring>
+
+### duplicati
+
+I use Duplicati on most of my devices as a way to ensure I have offsite backups of the data in case of SD card corruption or other data loss.
+It also makes it convenient to migrate the data to a new device or memory card if needed.
+
+Check out the `duplicati` branch of this repo for an example of adding a Duplicati service.
+
+<https://github.com/klutchell/balena-bookstack/tree/duplicati>
 
 ## Contributing
 
