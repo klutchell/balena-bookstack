@@ -11,7 +11,8 @@ data:
   description: "BookStack is a simple and free, self-hosted, easy-to-use wiki platform for organising and storing information."
   applicationEnvironmentVariables:
     - MYSQL_ROOT_PASSWORD: 'mysecretpassword'
-  defaultDeviceType: "raspberrypi3-64"
+  defaultDeviceType: "raspberrypi3"
   supportedDeviceTypes:
+    - "raspberrypi3"
     - "raspberrypi3-64"
     - "raspberrypi4-64"
