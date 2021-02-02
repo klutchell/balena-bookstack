@@ -1,14 +1,16 @@
-version: "2"
-slug: "bookstackapp"
 name: "BookStack"
 type: "sw.application"
+description: "BookStack is a simple and free, self-hosted, easy-to-use wiki platform for organising and storing information."
 assets:
-  - url: "https://github.com/klutchell/balena-bookstack"
-    name: "repository"
-  - url: "https://raw.githubusercontent.com/klutchell/balena-bookstack/main/logo.png"
-    name: "logo"
+  repository:
+    type: "blob.asset"
+    data:
+      url: "https://github.com/klutchell/balena-bookstack"
+  logo:
+    type: "blob.asset"
+    data:
+      url: "https://raw.githubusercontent.com/klutchell/balena-bookstack/main/logo.png"
 data:
-  description: "BookStack is a simple and free, self-hosted, easy-to-use wiki platform for organising and storing information."
   applicationEnvironmentVariables:
     - MYSQL_ROOT_PASSWORD: 'mysecretpassword'
   defaultDeviceType: "raspberrypi3"
