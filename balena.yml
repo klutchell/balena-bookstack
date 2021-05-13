@@ -1,6 +1,15 @@
 name: "BookStack"
 type: "sw.application"
 description: "BookStack is a simple and free, self-hosted, easy-to-use wiki platform for organising and storing information."
+fleetcta: Make a note
+post-provisioning: >-
+  ## Usage instructions
+
+  Once your device joins the fleet you'll need to allow some time for it to download the application and create the app database.
+  
+  When it's done you should be able to access the access the app at http://boostack.local. The default username is `admin@admin.com` with the password of `password`.
+  
+  Documentation for BookStack can be found at https://www.bookstackapp.com/docs/
 assets:
   repository:
     type: "blob.asset"
@@ -12,7 +21,7 @@ assets:
       url: "https://raw.githubusercontent.com/klutchell/balena-bookstack/main/logo.png"
 data:
   applicationEnvironmentVariables:
-    - MYSQL_ROOT_PASSWORD: 'mysecretpassword'
+    - APP_URL: 'http://bookstack.local'
   defaultDeviceType: "raspberrypi3"
   supportedDeviceTypes:
     - "raspberrypi3"
