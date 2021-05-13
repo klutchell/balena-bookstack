@@ -16,6 +16,8 @@ services:
       CACHE_DRIVER: redis
       SESSION_DRIVER: redis
       REDIS_SERVERS: redis:6379:0
+      APP_URL: http://bookstack.local
+      BALENA_HOSTNAME: bookstack
     ports:
       - 80:80/tcp
     volumes:
@@ -23,12 +25,14 @@ services:
     depends_on:
       - mariadb
       - redis
+    labels:
+      io.balena.features.supervisor-api: 1
 
   # https://hub.docker.com/_/redis
   redis:
     image: redis:6.0.9-alpine
 
-  # https://hub.docker.com/_/mariadb/
+  # https://hub.docker.com/r/yobasystems/alpine-mariadb
   mariadb:
     build: mariadb
     volumes:
@@ -37,14 +41,3 @@ services:
       MYSQL_DATABASE: bookstack
       MYSQL_USER: bookstack
       MYSQL_PASSWORD: bookstack
-
-  # https://hub.docker.com/_/mariadb/
-  mysqldump:
-    build: mariadb
-    command: "/sqldump.sh"
-    environment:
-      MYSQL_DATABASE: bookstack
-    volumes:
-      - mariadb:/var/lib/mysql
-    depends_on:
-      - mariadb
