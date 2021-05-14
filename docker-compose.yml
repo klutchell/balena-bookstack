@@ -41,3 +41,4 @@ services:
       MYSQL_DATABASE: bookstack
       MYSQL_USER: bookstack
       MYSQL_PASSWORD: bookstack
+      MYSQL_ROOT_PASSWORD: balena
