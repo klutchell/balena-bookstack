@@ -7,7 +7,9 @@ post-provisioning: >-
 
   Once your device joins the fleet you'll need to allow some time for it to download the application and create the app database.
   
-  When it's done you should be able to access the access the app at http://boostack.local. The default username is `admin@admin.com` with the password of `password`.
+  When it's done you should be able to access the access the app at http://bookstack.local
+  
+  The default username is `admin@admin.com` with the password of `password`.
   
   Documentation for BookStack can be found at https://www.bookstackapp.com/docs/
 assets:
