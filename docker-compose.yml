@@ -7,7 +7,7 @@ volumes:
 services:
   # https://hub.docker.com/r/linuxserver/bookstack/
   bookstack:
-    build: bookstack
+    build: app
     environment:
       DB_HOST: mariadb
       DB_DATABASE: bookstack
@@ -17,7 +17,6 @@ services:
       SESSION_DRIVER: redis
       REDIS_SERVERS: redis:6379:0
       APP_URL: http://bookstack.local
-      BALENA_HOSTNAME: bookstack
     ports:
       - 80:80/tcp
     volumes:
@@ -34,7 +33,7 @@ services:
 
   # https://hub.docker.com/r/yobasystems/alpine-mariadb
   mariadb:
-    build: mariadb
+    image: yobasystems/alpine-mariadb
     volumes:
       - mariadb:/var/lib/mysql
     environment:
@@ -42,3 +41,11 @@ services:
       MYSQL_USER: bookstack
       MYSQL_PASSWORD: bookstack
       MYSQL_ROOT_PASSWORD: balena
+    # Repurpose the healthcheck cmd by having it export our database on a schedule.
+    # Run the backup every 1 hour to a file called hourly-backup.sql.
+    # How to restore: <https://mariadb.com/kb/en/mysqldump/#restoring>
+    healthcheck:
+      test: mysqldump -uroot -p$MYSQL_ROOT_PASSWORD --all-databases --result-file=/var/lib/mysql/hourly-backup.sql || exit 0
+      interval: 1h
+      timeout: 30s
+      retries: 3
